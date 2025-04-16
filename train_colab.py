@@ -32,6 +32,7 @@ import random
 from PIL import Image
 import numpy
 import copy
+import re
 
 check_min_version("0.27.0.dev0")
 logger = get_logger(__name__, log_level="INFO")
@@ -380,6 +381,9 @@ def main():
     first_epoch = 0
 
     # Potentially load in the weights and states from a previous save
+
+
+
     if resume_from_checkpoint:
         if resume_from_checkpoint != "latest":
             path = os.path.basename(resume_from_checkpoint)
@@ -387,7 +391,12 @@ def main():
             # Get the most recent checkpoint
             dirs = os.listdir(output_dir)
             dirs = [d for d in dirs if d.startswith("checkpoint")]
-            dirs = sorted(dirs, key=lambda x: int(x.split("-")[1]))
+
+            def extract_step(d):
+                match = re.search(r"checkpoint-(\d+)", d)
+                return int(match.group(1)) if match else 0  # checkpoint → 0
+
+            dirs = sorted(dirs, key=extract_step)
             path = dirs[-1] if len(dirs) > 0 else None
 
         if path is None:
@@ -398,7 +407,9 @@ def main():
         else:
             accelerator.print(f"Resuming from checkpoint {path}")
             accelerator.load_state(os.path.join(output_dir, path))
-            global_step = int(path.split("-")[1])
+
+            match = re.search(r"checkpoint-(\d+)", path)
+            global_step = int(match.group(1)) if match else 0
 
             resume_global_step = global_step * gradient_accumulation_steps
             first_epoch = global_step // num_update_steps_per_epoch
