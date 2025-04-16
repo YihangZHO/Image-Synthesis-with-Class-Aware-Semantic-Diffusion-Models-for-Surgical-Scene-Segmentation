@@ -1,0 +1,6 @@
+accelerate>=0.16.0
+torchvision
+datasets
+git+https://github.com/huggingface/diffusers.git
+tensorboard
+wandb
