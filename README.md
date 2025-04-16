@@ -1,15 +1,15 @@
 # Image-Synthesis-with-Class-Aware-Semantic-Diffusion-Models-for-Surgical-Scene-Segmentation
 
-Official code to the paper: **Image Synthesis with Class-Aware Semantic Diffusion Models for Surgical Scene Segmentation**
+Official code for the paper: **Image Synthesis with Class-Aware Semantic Diffusion Models for Surgical Scene Segmentation**
 
 ---
 
 ## 📁 Datasets & Resources
 
-- **CholecSeg8K train / test sets**  
+- **CholecSeg8K train/test sets**  
   [Download here](https://drive.google.com/file/d/1U-RcSu_pui6sOk15ldu7pLPJenIyWP_E/view?usp=sharing)
 
-- **CholecSeg8K colourful masks**  
+- **CholecSeg8K colorful masks**  
   [Download here](https://drive.google.com/file/d/1pkzxc5g0mVtw4jLuRrdx1YnlFQfU2891/view?usp=sharing)
 
 - **Image generation checkpoint**  
@@ -17,6 +17,18 @@ Official code to the paper: **Image Synthesis with Class-Aware Semantic Diffusio
 
 ---
 
-Codes and checkpoints regarding mask synthesis are based on Huggingface Diffuser's stable diffusion model, and will be released soon.
+## 🧪 Code Usage
 
-Feel free to cite or open an issue if you have any questions.
+- **Training**: See [`train.ipynb`](./train.ipynb)  
+- **Generation / Testing**: See [`test.ipynb`](./test.ipynb)
+
+---
+
+## 🧠 Acknowledgements
+
+Parts of the code and model checkpoints for mask synthesis are based on Hugging Face's [Diffusers](https://github.com/huggingface/diffusers) implementation of Stable Diffusion, and will be released soon.
+
+---
+
+Feel free to open an issue or contact us if you have any questions.  
+Pull requests are welcome!
