@@ -18,3 +18,4 @@ Official code to the paper: **Image Synthesis with Class-Aware Semantic Diffusio
 ---
 
 Feel free to cite or open an issue if you have any questions.
+Codes and checkpoints regarding mask synthesis are based on Huggingface Diffuser's stable diffusion model, and will be released soon.
