@@ -28,7 +28,7 @@ Official code for the paper: **Image Synthesis with Class-Aware Semantic Diffusi
 
 Our model is built upon the following excellent open-source projects:
 
-- 🤗 [Hugging Face Diffusers](https://github.com/huggingface/diffusers) – the baseline of this project and code for mask synthesis is based on its implementation of Stable Diffusion.
+- 🤗 [Hugging Face Diffusers](https://github.com/huggingface/diffusers) – the baseline of this project and code for mask synthesis is based on its implementation of Stable Diffusion
 - 🧠 [Semantic Diffusion Model by Weilun Wang](https://github.com/WeilunWang/semantic-diffusion-model) – semantic-aware conditioning framework
 
 We thank the authors for their contributions to the open-source community.
